@@ -54,7 +54,7 @@ public class GameServer {
 	 */
 	public GameServer() {
 		// Load configuration file
-		configure();
+		//configure();
 		// Initialize tables for global use
 		GameRequestTable.init(); // Contains request codes and classes
 		// Initialize database connection
@@ -80,7 +80,7 @@ public class GameServer {
 	 */
 	public final void configure() {
 		configuration = new GameServerConf();
-		ConfFileParser confFileParser = new ConfFileParser("conf/gameServer.conf");
+		ConfFileParser confFileParser = new ConfFileParser("core/gameServer.conf");
 		configuration.setConfRecords(confFileParser.parse());
 	}
 
@@ -99,7 +99,7 @@ public class GameServer {
 	private void run() {
 		try {
 			// Open a connection using the given port to accept incoming connections
-			serverSocket = new ServerSocket(configuration.getPortNumber());
+			serverSocket = new ServerSocket(9252);
 //            Log.printf("Server has started on port: %d : %d", serverSocket.getLocalPort(),InetAddress.getLocalHost());
 			Log.printf("Server has started on port: %d", serverSocket.getLocalPort());
 			Log.println("Waiting for clients...");

@@ -28,6 +28,8 @@ public class GameRequestTable {
         add(Constants.CMSG_TIMER,"RequestTimer");
         add(Constants.CMSG_WELCOME_PLAYER,"RequestWelcomePlayer");
         add(Constants.CMSG_PLAYER_JOIN,"RequestTwoPlayer");
+        add(Constants.CMSG_MOVE,"RequestMove");
+        add(Constants.CMSG_LOGIN, "RequestAuthentication");
         }
 
     /**

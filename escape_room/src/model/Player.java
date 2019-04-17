@@ -10,15 +10,18 @@ import core.GameClient;
  */
 public class Player {
 
+    private static int static_id;
     private int player_id;
     private String username;
     private String password;
     private short level;
     private int money;
     private GameClient client; // References GameClient instance
+    private static float posX;
+    private static float posZ;
 
-    public Player(int player_id) {
-        this.player_id = player_id;
+    public Player() {
+        this.player_id = ++static_id;
     }
 
     public Player(int player_id, String username, String password) {
@@ -65,6 +68,16 @@ public class Player {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public void setPosX(float posX)
+    {
+        this.posX= posX;
+    }
+
+    public void setPosZ(float posZ)
+    {
+        this.posX= posZ;
     }
 
     public GameClient getClient() {
